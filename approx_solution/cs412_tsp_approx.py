@@ -13,18 +13,12 @@ def best_permutation(matrix, vertices):
 
     for v in range(1, len(vertices)-1):
        for u in range (1, len(vertices)-1):
-            copy = vertices.copy()
+            copy = vertices.copy() #copy temp array
             if copy[u] != copy[v]:
-                print(copy)
-                print(u)
-                print(v)
-                uind = copy.index(copy[u])
-                vind = copy.index(copy[v])
-                print(uind)
-                print(vind)
-                copy[uind] = v
-                copy[vind] = u
-                print(copy)
+                left = copy[u] #store left
+                right = copy[v] #store right
+                copy[v] = left #swap
+                copy[u] = right #swap
                 total = get_weight(matrix, copy)
                 if total < weight:
                     weight = total
