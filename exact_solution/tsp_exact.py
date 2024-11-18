@@ -17,17 +17,17 @@ def inDict(val, dict):
 Return the length of the path
 """
 def getPathLen(path, graph):
-    pass
+    return 10000
 
 
 def getShortestCycle(graph):
     vertices = graph.keys()
     minLen = float('inf')
-    minPath = None
+    minPath = 0
     for path in product(vertices, repeat=len(vertices)):
         if len(set(path)) != len(path):
             continue
-        pathLen = getPathLen(path)
+        pathLen = getPathLen(path, graph)
         if pathLen < minLen:
             minPath = path
             minLen = pathLen
@@ -53,6 +53,7 @@ def main():
         else:
             graph[v] = {u : w}
     result = getShortestCycle(graph)
+    print(graph)
     print(result)
 
 
