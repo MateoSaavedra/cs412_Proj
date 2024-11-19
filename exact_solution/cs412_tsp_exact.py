@@ -70,9 +70,11 @@ def main():
             graph[v][u] = w
         else:
             graph[v] = {u : w}
-    result = getShortestCycle(graph)
-    print(graph)
-    print(result)
+
+    min_len, min_path = getShortestCycle(graph)
+    print(f"{min_len:.4f}")
+    path_str = " ".join(min_path) + " " + min_path[0]
+    print(path_str)
 
 
 if __name__ == "__main__":
