@@ -1,5 +1,5 @@
 """
-Code to find exact solution using backtracking algorithm
+Code to find exact solution to TSP using backtracking algorithm
 """
 
 from itertools import product
@@ -17,7 +17,25 @@ def inDict(val, dict):
 Return the length of the path
 """
 def getPathLen(path, graph):
-    return 10000
+    total_length = 0
+    for i in range(len(path) - 1):
+        u = path[i]
+        v = path[i + 1]
+        
+        # Check for edge
+        if v in graph.get(u, {}):
+            total_length += graph[u][v]
+        else:
+            # Edge does not exist
+            return 100000
+    
+    # Add return edge to form a cycle
+    if path[-1] in graph.get(path[0], {}):
+        total_length += graph[path[-1]][path[0]]
+    else:
+        return float('inf')
+    
+    return total_length
 
 
 def getShortestCycle(graph):
