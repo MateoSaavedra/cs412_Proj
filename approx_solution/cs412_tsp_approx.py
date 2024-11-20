@@ -41,25 +41,27 @@ def approximate(matrix):
     return smallest, order
 
 def main():
-    encodings = {}
-    start = 'a'
+    encodings = []
     ve = input().split()
     num_vertices = int(ve[0])
     num_edges = int(ve[1])
     adj_matrix = [[None for y in range(num_vertices)] for x in range(num_vertices)]
 
+    start = 'a'
     for vert in range(num_vertices):
-        encodings[start] = vert
-        start = chr(ord(start) + 1)
+        encodings.append(start)
+        start = chr(ord(start)+1)
 
     for edge in range(num_edges):
         u, v, w = input().split()
-        adj_matrix[int(encodings[u])][int(encodings[v])] = float(w)
-        adj_matrix[int(encodings[v])][int(encodings[u])] = float(w)
+        adj_matrix[int(encodings.index(v))][int(encodings.index(u))] = float(w)
+        adj_matrix[int(encodings.index(u))][int(encodings.index(v))] = float(w)
 
     dist, order = approximate(adj_matrix)
     print(dist)
-    print(order)
+    for v in order:
+        print(encodings[v], end=" ")
+    print()
 
 if __name__ == '__main__':
     main()
