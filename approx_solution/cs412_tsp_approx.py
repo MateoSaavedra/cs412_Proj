@@ -1,4 +1,8 @@
 import random
+import argparse
+
+SHUFFLE = 20
+
 def get_weight(matrix, vertices):
     total = 0
     for v in range(len(vertices)-1):
@@ -30,7 +34,7 @@ def approximate(matrix):
     best = []
     vnum = len(matrix)
     v = [i for i in range(vnum)]
-    for i in range(20):
+    for i in range(args.shuffle):
         curr = v.copy()
         random.shuffle(curr)
         curr.append(curr[0])
@@ -40,7 +44,7 @@ def approximate(matrix):
             best = order
     return smallest, order
 
-def main():
+def main(args):
     encodings = []
     ve = input().split()
     num_vertices = int(ve[0])
@@ -64,4 +68,12 @@ def main():
     print()
 
 if __name__ == '__main__':
-    main()
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-s', '--shuffle', default=SHUFFLE, type=int,
+                    help='The number of shuffled permutations to test.'
+                            'Default: 20')
+    args=parser.parse_args()
+
+    main(args)
