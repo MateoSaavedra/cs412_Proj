@@ -1,0 +1,3 @@
+12.6000
+a b c a
+Line not read
