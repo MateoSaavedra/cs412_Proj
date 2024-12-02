@@ -3,70 +3,67 @@ import argparse
 
 SHUFFLE = 20
 
-def get_weight(matrix, vertices):
+def get_weight(adj_list, vertices):
     total = 0
     for v in range(len(vertices)-1):
         this = vertices[v]
         nxt = vertices[v+1]
-        total += matrix[this][nxt]
-    return total
+        total += adj_list[this].get(nxt)
+    return round(total, 4)
 
-def best_permutation(matrix, vertices):
-    weight = get_weight(matrix, vertices)
+def best_permutation(adj_list, vertices):
+    weight = get_weight(adj_list, vertices) #get the weight of the vertex list as-is
     permutation = vertices
 
-    for v in range(1, len(vertices)-1):
-       for u in range (1, len(vertices)-1):
-            copy = vertices.copy() #copy temp array
-            if copy[u] != copy[v]:
-                left = copy[u] #store left
-                right = copy[v] #store right
-                copy[v] = left #swap
-                copy[u] = right #swap
-                total = get_weight(matrix, copy)
-                if total < weight:
-                    weight = total
-                    permutation = copy
-    return total, permutation
+    for v in range(1, len(vertices)-1): # iterate through indices
+       for u in range (1, len(vertices)-1): # ^ 
+            copy = vertices.copy() # make a temp copy of the original list
+            if copy[u] != copy[v]: # ensure that we are not swapping matching characters
+                left = copy[u] # store left
+                right = copy[v] # store right
+                copy[v] = left # swap
+                copy[u] = right # swap
+                total = get_weight(adj_list, copy) # get weight of adjusted list
+                if total < weight: # check for sol
+                    weight = total # store new value
+                    permutation = copy # store ordering of vertices
+    return total, permutation # return minimum weights and the order that produced it
 
-def approximate(matrix):
-    smallest = float('inf')
-    best = []
-    vnum = len(matrix)
-    v = [i for i in range(vnum)]
-    for i in range(args.shuffle):
-        curr = v.copy()
-        random.shuffle(curr)
-        curr.append(curr[0])
-        dist, order = best_permutation(matrix, curr)
-        if dist < smallest:
-            smallest = dist
-            best = order
-    return smallest, order
+def approximate(adj_list):
+    smallest = float('inf') # minimum threshold
+    best = [] # best permutation of vertices
+    vnum = len(adj_list) # number of vertices
+    v = [k for k in adj_list.keys()] # get all vertex labels
+    for i in range(args.shuffle): # shuffle the order the # of times specified on cmdline (else 20)
+        curr = v.copy() # make a copy and store it
+        random.shuffle(curr) # shuffle order
+        curr.append(curr[0]) # add the source vertex as the dest
+        dist, order = best_permutation(adj_list, curr) # explore internal shufflings and store best
+        if dist < smallest: # check for improved sol
+            smallest = dist # store lower value
+            best = order # store improved vertex order
+    return smallest, best #return the minimum weight and permuation
 
 def main(args):
-    encodings = []
     ve = input().split()
     num_vertices = int(ve[0])
     num_edges = int(ve[1])
-    adj_matrix = [[None for y in range(num_vertices)] for x in range(num_vertices)]
-
-    start = 'a'
-    for vert in range(num_vertices):
-        encodings.append(start)
-        start = chr(ord(start)+1)
+    adj_list = {}
 
     for edge in range(num_edges):
         u, v, w = input().split()
-        adj_matrix[int(encodings.index(v))][int(encodings.index(u))] = float(w)
-        adj_matrix[int(encodings.index(u))][int(encodings.index(v))] = float(w)
+        if u not in adj_list:
+            adj_list[u] = {}
+        if v not in adj_list:
+            adj_list[v] = {}
+        adj_list[u][v] = float(w)
+        adj_list[v][u] = float(w)
 
-    dist, order = approximate(adj_matrix)
-    print(dist)
+    dist, order = approximate(adj_list)
+    print(f'{dist:.4f}')
     for v in order:
-        print(encodings[v], end=" ")
-    print()
-
+        print(v, end=' ')
+    print("\n")
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
