@@ -1,4 +1,4 @@
 1) Find the lower bound of the problem
 
 
-The lower bound of the travelling salesman is the total weight of the lowest weight hamiltonian path in the graph.
+The lower bound of the travelling salesman is the total weight of the lowest weight Hamiltonian path in the graph.
