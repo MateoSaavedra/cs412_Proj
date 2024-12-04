@@ -12,22 +12,43 @@ def get_weight(adj_list, vertices):
     return round(total, 4)
 
 def best_permutation(adj_list, vertices):
+    print('best_perm')
     weight = get_weight(adj_list, vertices) #get the weight of the vertex list as-is
     permutation = vertices
 
     for v in range(1, len(vertices)-1): # iterate through indices
-       for u in range (1, len(vertices)-1): # ^ 
-            copy = vertices.copy() # make a temp copy of the original list
-            if copy[u] != copy[v]: # ensure that we are not swapping matching characters
-                left = copy[u] # store left
-                right = copy[v] # store right
-                copy[v] = left # swap
-                copy[u] = right # swap
-                total = get_weight(adj_list, copy) # get weight of adjusted list
+       for u in range (v+1, len(vertices)-1): # ^ 
+            if u != v: # ensure that we are not swapping matching characters
+                left = vertices[u] # store left
+                right = vertices[v] # store right
+                vertices[v] = left # swap
+                vertices[u] = right # swap
+                total = get_weight(adj_list, vertices) # get weight of adjusted list
                 if total < weight: # check for sol
                     weight = total # store new value
-                    permutation = copy # store ordering of vertices
+                    permutation = vertices.copy() # store ordering of vertices
+                left = vertices[u] # store left
+                right = vertices[v] # store right
+                vertices[v] = left # swap
+                vertices[u] = right # swap
     return total, permutation # return minimum weights and the order that produced it
+
+# def best_permutation(adj_list, vertices):
+#     unvisited = set(adj_list.keys())
+#     unvisited.remove(vertices[0])
+#     tour = [vertices[0]]
+#     weight = 0
+
+
+#     while unvisited:
+#         curr = adj_list[tour[-1]]
+#         min_dist = min(unvisited, key=lambda v: adj_list[tour[-1]].get(v))
+#         unvisited.remove(min_dist)
+#         weight += curr.get(min_dist)
+#         tour.append(min_dist)
+#     weight += adj_list[tour[-1]].get(vertices[0])
+#     tour.append(vertices[0])
+#     return weight, tour
 
 def approximate(adj_list):
     smallest = float('inf') # minimum threshold

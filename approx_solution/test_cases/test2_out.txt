@@ -1,0 +1,23 @@
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+best_perm
+26.1000
+f a e d c b f 
+
