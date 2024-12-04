@@ -2,24 +2,34 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    abbyRuns = 6
+    numGraphs = 4
+    abbyRuns = 6 # how many times we run over a data set for each graph
     abbyNums = []
     xAxis = [i for i in range(abbyRuns)]
-    for _ in range(abbyRuns):
-        num = float(input())
-        abbyNums.append(num)
-        # flush input
-        input()
-        input()
+
+    for i in range(numGraphs):
+        graphNumsA = []
+        for _ in range(abbyRuns):
+            num = float(input())
+            graphNumsA.append(num)
+            # flush input
+            input()
+            input()
+        abbyNums.append(graphNumsA)
     
     num = float(input()) # grab Mateo's number
-    mateoNums = [num for _ in range(abbyRuns)]
+    # mateoNums = [num for _ in range(abbyRuns)]
     
-
-    plt.plot(xAxis, abbyNums, label="Approx Results")
-    plt.plot(xAxis, mateoNums, label="Exact Results")
-    plt.legend()
+    fig = plt.figure()
+    # ax = fig.add_axes(xAxis)
+    bp =  plt.boxplot(abbyNums)
+    print(abbyNums)
     plt.show()
+
+    # plt.plot(xAxis, abbyNums, label="Approx Results")
+    # plt.plot(xAxis, mateoNums, label="Exact Results")
+    # plt.legend()
+    # plt.show()
     plt.savefig("comparisonPlot")
 
 

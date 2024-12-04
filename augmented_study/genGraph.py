@@ -6,7 +6,8 @@ edges do not repeat
 """
 def generateRandomGraph():
     f = open("graph", 'w')
-    n = random.randint(4, 12) # random up to 12 vertices
+    # n = random.randint(4, 12) # random up to 12 vertices
+    n = int(input())
     verts = [chr(i) for i in range(65, 65 + n)]
     edges = set()
     graph = []

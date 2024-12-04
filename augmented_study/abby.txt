@@ -1,18 +1,54 @@
-37.2400
-d f a g e c b d 
+74.1300
+f d h b e a g c f 
 
-40.6600
-f e a c g b d f 
+66.5900
+b g c a e d h f b 
 
-33.2600
-a g b d f e c a 
+72.6400
+b e a h d f c g b 
 
-40.0100
-f d b g a c e f 
+70.7400
+e b g c a f d h e 
 
-43.1000
-f a e c g b d f 
+74.5800
+b h d f c g a e b 
 
-33.2600
-g b d f c e a g 
+62.3000
+c h d f b e a g c 
+
+78.8900
+f a g e c d h i b j f 
+
+65.6300
+d b a g e f h c i j d 
+
+58.4000
+a f e j i h d b c g a 
+
+67.5800
+b j i h c e g d a f b 
+
+78.2100
+h f g a i j e c b d h 
+
+65.0200
+d a g e j i b c f h d 
+
+72.7400
+b c l k j i a d e f h g b 
+
+93.9800
+b j i g e d f h k a c l b 
+
+65.8300
+h d f e l c j i b a k g h 
+
+80.0600
+k a b c l g h f i j e d k 
+
+87.3200
+f l k i j c a b h g e d f 
+
+78.4400
+h k g i j c l f a e d b h 
 
