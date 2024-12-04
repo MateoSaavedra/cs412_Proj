@@ -12,7 +12,6 @@ def get_weight(adj_list, vertices):
     return round(total, 4)
 
 def best_permutation(adj_list, vertices):
-    print('best_perm')
     weight = get_weight(adj_list, vertices) #get the weight of the vertex list as-is
     permutation = vertices
 
