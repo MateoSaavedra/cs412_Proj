@@ -2,7 +2,26 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    pass
+    abbyRuns = 6
+    abbyNums = []
+    xAxis = [i for i in range(abbyRuns)]
+    for _ in range(abbyRuns):
+        num = float(input())
+        abbyNums.append(num)
+        # flush input
+        input()
+        input()
+    
+    num = float(input()) # grab Mateo's number
+    mateoNums = [num for _ in range(abbyRuns)]
+    
+
+    plt.plot(xAxis, abbyNums, label="Abby Runs")
+    plt.plot(xAxis, mateoNums, label="Mateo Runs")
+    plt.legend()
+    plt.show()
+    plt.savefig("comparisonPlot")
+
 
 
 if __name__ == "__main__":
