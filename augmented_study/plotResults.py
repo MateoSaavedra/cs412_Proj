@@ -5,8 +5,11 @@ def main():
     numGraphs = 4
     abbyRuns = 6 # how many times we run over a data set for each graph
     abbyNums = []
-    xAxis = [i for i in range(abbyRuns)]
+    mateoNums = []
+    startingSize = 4 # this is the number of vertices in the first graph
+    xAxis = [startingSize + (i * 2) for i in range(numGraphs)]
 
+    # Get approximate data
     for i in range(numGraphs):
         graphNumsA = []
         for _ in range(abbyRuns):
@@ -17,19 +20,19 @@ def main():
             input()
         abbyNums.append(graphNumsA)
     
-    num = float(input()) # grab Mateo's number
-    # mateoNums = [num for _ in range(abbyRuns)]
+    # Get exact data
+    for i in range(numGraphs):
+        num = float(input()) # grab Mateo's number
+        mateoNums.append(num)
+        input() # skip the next input
     
-    fig = plt.figure()
-    # ax = fig.add_axes(xAxis)
-    bp =  plt.boxplot(abbyNums)
-    print(abbyNums)
+    plt.figure()
+    plt.boxplot(abbyNums, positions = xAxis)
+    plt.plot(xAxis, mateoNums)
+    plt.title("Comparison of the Aproximate vs Exact Solutions (TSP)")
+    plt.xlabel("Graph Size (# of Vertices)")
+    plt.ylabel("Shortest Path Length")
     plt.show()
-
-    # plt.plot(xAxis, abbyNums, label="Approx Results")
-    # plt.plot(xAxis, mateoNums, label="Exact Results")
-    # plt.legend()
-    # plt.show()
     plt.savefig("comparisonPlot")
 
 

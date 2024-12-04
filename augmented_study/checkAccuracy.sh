@@ -1,4 +1,4 @@
-echo 8 | python genGraph.py
+echo 4 | python genGraph.py
 
 echo "Testing with 8 vertices"
 echo "Running Approximate Solution"
@@ -16,7 +16,7 @@ python ../exact_solution/cs412_tsp_exact.py < graph > mateo.txt
 
 echo "Run Complete"
 ##############################################################################
-echo 10 | python genGraph.py
+echo 6 | python genGraph.py
 
 echo "Testing with 10 vertices"
 echo "Running Approximate Solution"
@@ -34,7 +34,7 @@ python ../exact_solution/cs412_tsp_exact.py < graph >> mateo.txt
 
 echo "Run Complete"
 ##############################################################################
-echo 12 | python genGraph.py
+echo 8 | python genGraph.py
 
 echo "Testing with 12 vertices"
 echo "Running Approximate Solution"
@@ -52,7 +52,7 @@ python ../exact_solution/cs412_tsp_exact.py < graph >> mateo.txt
 
 echo "Run Complete"
 ##############################################################################
-echo 14 | python genGraph.py
+echo 10 | python genGraph.py
 
 echo "Testing with 14 vertices"
 echo "Running Approximate Solution"
