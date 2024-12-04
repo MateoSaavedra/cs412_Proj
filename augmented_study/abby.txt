@@ -1,18 +1,18 @@
-45.1500
-e d f b c a e 
+37.2400
+d f a g e c b d 
 
-45.1500
-b f d e a c b 
+40.6600
+f e a c g b d f 
 
-45.4500
-e a c f b d e 
+33.2600
+a g b d f e c a 
 
-45.1500
-f b c a e d f 
+40.0100
+f d b g a c e f 
 
-46.0400
-a b c f d e a 
+43.1000
+f a e c g b d f 
 
-46.0400
-c b a e d f c 
+33.2600
+g b d f c e a g 
 

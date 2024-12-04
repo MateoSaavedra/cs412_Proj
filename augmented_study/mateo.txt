@@ -1,2 +1,2 @@
-45.1500
-a c b f d e a
+27.3800
+b g a c e f d b

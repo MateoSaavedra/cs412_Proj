@@ -16,8 +16,8 @@ def main():
     mateoNums = [num for _ in range(abbyRuns)]
     
 
-    plt.plot(xAxis, abbyNums, label="Abby Runs")
-    plt.plot(xAxis, mateoNums, label="Mateo Runs")
+    plt.plot(xAxis, abbyNums, label="Approx Results")
+    plt.plot(xAxis, mateoNums, label="Exact Results")
     plt.legend()
     plt.show()
     plt.savefig("comparisonPlot")
