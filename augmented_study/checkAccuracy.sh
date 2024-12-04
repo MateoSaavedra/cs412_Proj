@@ -21,3 +21,5 @@ cat abby.txt mateo.txt > results
 echo "Plotting Results"
 
 python plotResults.py < results
+
+echo "Plot saved to comparisonPlot.png"
