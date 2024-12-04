@@ -6,7 +6,7 @@ def main():
     abbyRuns = 6 # how many times we run over a data set for each graph
     abbyNums = []
     mateoNums = []
-    startingSize = 4 # this is the number of vertices in the first graph
+    startingSize = 6 # this is the number of vertices in the first graph
     xAxis = [startingSize + (i * 2) for i in range(numGraphs)]
 
     # Get approximate data

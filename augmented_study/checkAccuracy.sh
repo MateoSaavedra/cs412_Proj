@@ -1,6 +1,6 @@
-echo 4 | python genGraph.py
+echo 6 | python genGraph.py
 
-echo "Testing with 8 vertices"
+echo "Testing with 6 vertices"
 echo "Running Approximate Solution"
 
 # Run Abby code 6 times
@@ -16,27 +16,9 @@ python ../exact_solution/cs412_tsp_exact.py < graph > mateo.txt
 
 echo "Run Complete"
 ##############################################################################
-echo 6 | python genGraph.py
-
-echo "Testing with 10 vertices"
-echo "Running Approximate Solution"
-
-# Run Abby code 6 times
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
-
-echo "Running Exact Solution"
-python ../exact_solution/cs412_tsp_exact.py < graph >> mateo.txt
-
-echo "Run Complete"
-##############################################################################
 echo 8 | python genGraph.py
 
-echo "Testing with 12 vertices"
+echo "Testing with 8 vertices"
 echo "Running Approximate Solution"
 
 # Run Abby code 6 times
@@ -54,7 +36,25 @@ echo "Run Complete"
 ##############################################################################
 echo 10 | python genGraph.py
 
-echo "Testing with 14 vertices"
+echo "Testing with 10 vertices"
+echo "Running Approximate Solution"
+
+# Run Abby code 6 times
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+
+echo "Running Exact Solution"
+python ../exact_solution/cs412_tsp_exact.py < graph >> mateo.txt
+
+echo "Run Complete"
+##############################################################################
+echo 12 | python genGraph.py
+
+echo "Testing with 12 vertices"
 echo "Running Approximate Solution"
 
 # Run Abby code 6 times

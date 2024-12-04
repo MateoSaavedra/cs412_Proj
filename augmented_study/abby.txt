@@ -1,72 +1,72 @@
-50.8400
-b d c a b 
-
-50.8400
-c a b d c 
-
-50.8400
-d b a c d 
-
-50.8400
-a b d c a 
-
-50.8400
-b a c d b 
-
-50.8400
-a b d c a 
-
-42.5300
-c e b d f a c 
-
-42.5300
-d f a c e b d 
-
-42.5300
-f d b e c a f 
-
-42.5300
-b d f a c e b 
+37.1200
+d c e f b a d 
 
 41.8000
-d c a f e b d 
+f c b a d e f 
 
-41.8000
-b e f a c d b 
+37.4000
+b a d c e f b 
 
-44.7200
-g a e d b c f h g 
+37.1200
+e c d a b f e 
 
-44.7200
-c f h e a g b d c 
+37.1200
+c d a b f e c 
 
-45.0000
-c g b d a h e f c 
+37.4000
+a b e f c d a 
 
-50.0700
-g b d e c f h a g 
+57.4000
+f c b d h a e g f 
 
-49.8500
-b d a e f h g c b 
+49.5900
+f c b e a g d h f 
 
-49.3300
-h d b g e f c a h 
+51.5800
+e a g d b c f h e 
 
-63.1500
-i a c b d f g e h j i 
+52.5900
+b d g h e a f c b 
 
-60.1700
-e g f i j a c b d h e 
+50.7200
+f h e a g d b c f 
 
-60.8300
-g h d i a c f j b e g 
+52.6800
+d b g f c a e h d 
 
-63.1100
-i a j f d b c h g e i 
+45.3400
+d j i h g c f b a e d 
 
-55.9000
-e a j f i d b c h g e 
+47.3600
+b c j d f g h i e a b 
 
-56.8900
-e h d b j a i f g c e 
+49.6500
+j i c a e b h f g d j 
+
+64.5700
+c j e i h f d a b g c 
+
+52.0900
+e d j c f g b h i a e 
+
+70.3700
+c g d a j i e f b h c 
+
+72.3600
+g k l d i h a b f e j c g 
+
+78.0300
+h a d c f g b k i l e j h 
+
+83.2100
+i d h k l g f b a e c j i 
+
+85.2300
+k l i h d c j a f b g e k 
+
+85.3400
+l k h a e f g d c j b i l 
+
+81.6000
+c e k f l i h j a g b d c 
 
