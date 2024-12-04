@@ -2,7 +2,7 @@
 Code to find exact solution to TSP using backtracking algorithm
 """
 
-from itertools import product
+from itertools import permutations
 
 
 def inDict(val, dict):
@@ -42,9 +42,7 @@ def getShortestCycle(graph):
     vertices = graph.keys()
     minLen = float('inf')
     minPath = 0
-    for path in product(vertices, repeat=len(vertices)):
-        if len(set(path)) != len(path):
-            continue
+    for path in permutations(vertices):
         pathLen = getPathLen(path, graph)
         if pathLen < minLen:
             minPath = path
