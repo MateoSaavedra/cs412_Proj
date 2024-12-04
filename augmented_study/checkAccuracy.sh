@@ -1,8 +1,23 @@
 python genGraph.py
 
-python ../approx_solution/cs412_tsp_approx.py
+echo "Starting Abby's Code now"
 
-python ../exact_solution/cs412_tsp_exact.py
+# Run Abby code 6 times
+python ../approx_solution/cs412_tsp_approx.py < graph > abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
+python ../approx_solution/cs412_tsp_approx.py < graph >> abby.txt -s 50
 
-## generate a lot of different graphs
-## show how they differ
+echo "Starting Mateo's code now"
+python ../exact_solution/cs412_tsp_exact.py < graph > mateo.txt
+
+echo "Run Complete"
+
+# I keep Abby and Mateo's files separate so that I can keep track of things
+cat abby.txt mateo.txt > results
+
+echo "Plotting Results"
+
+python plotResults.py < results

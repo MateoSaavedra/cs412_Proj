@@ -6,7 +6,7 @@ edges do not repeat
 """
 def generateRandomGraph():
     f = open("graph", 'w')
-    n = random.randint(1, 10) # random up to 10 vertices
+    n = random.randint(4, 12) # random up to 12 vertices
     verts = [chr(i) for i in range(65, 65 + n)]
     edges = set()
     graph = []
@@ -20,10 +20,10 @@ def generateRandomGraph():
             graph.append([v, u, weight])
     f.write(f"{len(graph)}\n")
     for e in graph:
-        v = e[0]
-        u = e[1]
+        v = e[0].lower()
+        u = e[1].lower()
         w = e[2]
-        f.write(f"{v} {u} {w}\n")
+        f.write(f"{v} {u} {w:.2f}\n")
     f.close()
 
 
