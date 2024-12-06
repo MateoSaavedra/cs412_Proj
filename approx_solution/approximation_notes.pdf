@@ -11,3 +11,8 @@ every iteration. Additionally, the get_weight function is called in every iterat
 Popping out into the approximate function, our O(n^3) only has to compete with an O(n) so it is clearly the dominant term. This lies
 within the loop that will be run *shuffle* amount of times, and thus the total runtime is O(shuffle * n^3) which we will view as O(n^3).
 
+*Note*
+My run_test_cases.sh runs both the test cases themselves, as well as the wall clock performance for each of them. This is why there are not
+separate scripts to perform both! 
+
+
