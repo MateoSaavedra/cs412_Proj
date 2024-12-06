@@ -1,0 +1,13 @@
+My approximation solution heavily utilizies randomness in it's attempt to find a close-to-optimal answer when searching a complete graph for tours.
+By performing random shuffles to a single tour of the graph, we have the opportunity to explore 50+ different tours, 
+as well as all internal permutations (by swapping nodes visited) that can come from that specific shuffling. This is 
+especially useful because it allows our algorithm to pop in and out of local optima without getting stuck in one rut. 
+
+When looking at the runtime of my approximation, the worst case runtime is n^3, and is dominated by the nested for loop
+in the best_permutation function that also contains an O(n) function (get_weight, must interate over the tour and calculate the weight),
+as well as the creation of a copy of the tour so as to not permanently modify the current shuffle. Although this is only called when we find
+a better distance, it still contributes to our worst-case runtime under the assumption that we could find a better weight after
+every iteration. Additionally, the get_weight function is called in every iteration (but 2n = n so we are good here!)
+Popping out into the approximate function, our O(n^3) only has to compete with an O(n) so it is clearly the dominant term. This lies
+within the loop that will be run *shuffle* amount of times, and thus the total runtime is O(shuffle * n^3) which we will view as O(n^3).
+
