@@ -1,0 +1,1 @@
+(time python cs412_tsp_approx.py < test_cases/test3.txt > test_cases/nonopt_out.txt) 2> test_cases/nonopt_time.txt

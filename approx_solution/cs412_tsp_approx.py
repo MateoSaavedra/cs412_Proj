@@ -1,7 +1,7 @@
 import random
 import argparse
 
-SHUFFLE = 20
+SHUFFLE = 50
 
 def get_weight(adj_list, vertices):
     total = 0
@@ -30,31 +30,14 @@ def best_permutation(adj_list, vertices):
                 right = vertices[v] # store right
                 vertices[v] = left # swap
                 vertices[u] = right # swap
-    return total, permutation # return minimum weights and the order that produced it
-
-# def best_permutation(adj_list, vertices):
-#     unvisited = set(adj_list.keys())
-#     unvisited.remove(vertices[0])
-#     tour = [vertices[0]]
-#     weight = 0
-
-
-#     while unvisited:
-#         curr = adj_list[tour[-1]]
-#         min_dist = min(unvisited, key=lambda v: adj_list[tour[-1]].get(v))
-#         unvisited.remove(min_dist)
-#         weight += curr.get(min_dist)
-#         tour.append(min_dist)
-#     weight += adj_list[tour[-1]].get(vertices[0])
-#     tour.append(vertices[0])
-#     return weight, tour
+    return weight, permutation # return minimum weights and the order that produced it
 
 def approximate(adj_list):
     smallest = float('inf') # minimum threshold
     best = [] # best permutation of vertices
     vnum = len(adj_list) # number of vertices
     v = [k for k in adj_list.keys()] # get all vertex labels
-    for i in range(args.shuffle): # shuffle the order the # of times specified on cmdline (else 20)
+    for i in range(args.shuffle): # shuffle the order the # of times specified on cmdline (else 50)
         curr = v.copy() # make a copy and store it
         random.shuffle(curr) # shuffle order
         curr.append(curr[0]) # add the source vertex as the dest
@@ -90,7 +73,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-s', '--shuffle', default=SHUFFLE, type=int,
                     help='The number of shuffled permutations to test.'
-                            'Default: 20')
+                            'Default: 50')
     args=parser.parse_args()
 
     main(args)
